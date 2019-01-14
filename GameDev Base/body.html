@@ -16,14 +16,15 @@
                 for (var tag of tagList.getElementsByClassName("discourse-tag")) {
                     if (tag.innerText[3] === "_") // TODO Weak, use Regex
                     {
-                        if (document.getElementById("list-area"))
-                        {
-                            tag.remove();
-                        }
-                        else
+                        if (document.getElementById("topic-title"))
                         {
                             tag.innerText = "All Lecture Posts";
                             // TODO add 2nd link to all our courses (https://www.udemy.com/user/gamedevtv)
+                            
+                        }
+                        else
+                        {
+                            tag.remove();
                         }
                     }
                 }
