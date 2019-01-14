@@ -1,28 +1,40 @@
 <script src="https://d1dewqfmv9j5d4.cloudfront.net/gamedevtv-header.js"></script>
 
+
 <script>
     document.addEventListener("DOMContentLoaded", registerSubtreeInterception); 
 
     function registerSubtreeInterception() {
         // Select the node that will be observed for mutations
-        var targetNode = document.body; // TODO narrow scope later if possible
+        var targetNode = document.body;
         
         // Options for the observer (which mutations to observe)
         var config = { attributes: false, childList: true, subtree: true };
         
         // Callback function to execute when mutations are observed
         var callback = function(mutationsList, observer) {
-            
-            for(var tagList of document.getElementsByClassName("discourse-tags")) { // in the div, not edit box
+            modifyTags();
+        };
+        
+        function modifyTags() {
+            // TODO Consider if we really need nested loops
+            for(var tagList of document.getElementsByClassName("discourse-tags")) {
                 for (var tag of tagList.getElementsByClassName("discourse-tag"))
                 {
-                    if (tag.innerText[3] == "_") // Weak criteria for now
+                    if (tag.innerText[3] === "_") // Weak criteria for now. Regex?
                     {
-                        tag.innerText = "All Lecture Posts"
+                        if (document.getElementById("list-area"))
+                        {
+                            tag.remove();
+                        }
+                        else
+                        {
+                            tag.innerText = "All Lecture Posts";
+                        }
                     }
                 }
             }
-        };
+        }
         
         // Create an observer instance linked to the callback function
         var observer = new MutationObserver(callback);
