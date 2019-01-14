@@ -4,24 +4,17 @@
 <script>
     document.addEventListener("DOMContentLoaded", registerSubtreeInterception); 
 
-    function registerSubtreeInterception() {
-        // Select the node that will be observed for mutations
-        var targetNode = document.body;
-        
-        // Options for the observer (which mutations to observe)
-        var config = { attributes: false, childList: true, subtree: true };
-        
-        // Callback function to execute when mutations are observed
+    function registerSubtreeInterception()
+    {
         var callback = function(mutationsList, observer) {
-            modifyTags();
+            modifyTagLinksOnly();
         };
         
-        function modifyTags() {
+        function modifyTagLinksOnly() {  // Does not modify within drop-down
             // TODO Consider if we really need nested loops
             for(var tagList of document.getElementsByClassName("discourse-tags")) {
-                for (var tag of tagList.getElementsByClassName("discourse-tag"))
-                {
-                    if (tag.innerText[3] === "_") // Weak criteria for now. Regex?
+                for (var tag of tagList.getElementsByClassName("discourse-tag")) {
+                    if (tag.innerText[3] === "_") // TODO Weak, use Regex
                     {
                         if (document.getElementById("list-area"))
                         {
@@ -37,10 +30,8 @@
             }
         }
         
-        // Create an observer instance linked to the callback function
         var observer = new MutationObserver(callback);
-        
-        // Start observing the target node for configured mutations
-        observer.observe(targetNode, config);
+        var config = { attributes: false, childList: true, subtree: true };  // childList for post view, subtree for lists
+        observer.observe(document.body, config);
     }
 </script>
