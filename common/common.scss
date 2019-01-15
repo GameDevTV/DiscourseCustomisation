@@ -1,10 +1,151 @@
-/* Taken from top of both light and dark theme. Purpose unknown. */
-.docked .d-header {
+.docked .d-header { /* Taken from top of both light and dark theme. Purpose unknown. */
     background-color: #24a729;
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
 }
 
-.donkey {
-    background-color: #24a729; 
-    /* Here to help Ben track changes! */
+
+/* Below from GameDev Base on Discourse */
+.gdtv_navbar__container a:hover
+{
+    color: #fff;
+}
+
+/* line 176, ../scss/style.scss */
+.d-header .title {
+  visibility: hidden;
+}
+
+/* line 180, ../scss/style.scss */
+.d-header {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* line 186, ../scss/style.scss */
+.docked .d-header .title {
+  visibility: inherit;
+}
+
+/* line 77, ../scss/style.scss */
+.uvPageContainer {
+  height: 100%;
+}
+
+#user-card .metadata h3 {
+  float: left;
+}
+
+h3.user-card-public-field {
+ clear: both;   
+}
+
+/* Box styling for topics and post list */
+
+
+.admin-contents {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #3f3f3f;
+  color: #dcdcdc;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: #e3ceab;
+}
+
+.hljs-template-tag {
+  color: #dcdcdc;
+}
+
+.hljs-number {
+  color: #8cd0d3;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #efdcbc;
+}
+
+.hljs-literal {
+  color: #efefafg;
+}
+
+.hljs-subst {
+  color: #8f8f8f;
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #efef8f;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #dca3a3;
+}
+
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #cc9393;
+}
+
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #7f9f7f;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* composer */
+.open .grippie {
+  background: #24a729;
+}
+
+
+// To hide categories from homepage find ID from source code and add below
+
+.category-list [data-category-id="93"] 
+{
+    display: none;
+}
+
+.category-list [data-category-id="25"] 
+{
+    display: none;
+}
+
+.category-list [data-category-id="89"] 
+{
+    display: none;
 }

@@ -1,0 +1,77 @@
+<!-- Came from GameDev Base on Discord -->
+
+<link rel='stylesheet' id='roboto-font-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A400%2C700&#038;ver=4.5.3' type='text/css' media='all' />
+<link rel="stylesheet" href="https://d1dewqfmv9j5d4.cloudfront.net/gamedevtv-header.css" type="text/css">
+<script type="text/discourse-plugin" version="0.4">
+    api.onToolbarCreate(toolbar => {
+      I18n.translations.en.js.updated_timestamp = "Updated Timestamp";
+      toolbar.addButton({
+        id: "updated_button",
+        group: "extras",
+        icon: "clock-o",
+        title: "updated_timestamp",
+        perform: e => e.addText("_Updated " + new Date().toString().substring(0,21) + "_")
+      });
+    });
+</script>
+<meta name="google-site-verification" content="bUfLhRq5TZzaIaeTsCrUHskYd7MHkNVfbP5vXy5_NhU" />
+
+<script type="text/discourse-plugin" version="0.6">
+    const User = api.container.factoryFor('model:user');
+
+    api.registerConnectorClass('user-profile-primary', 'external-site-link', {
+      setupComponent(args, component) {
+        component.set('externalSiteLink', args.model.get('externalSiteLink'));
+      }
+    });
+
+    api.registerConnectorClass('user-card-metadata', 'external-site-link', {
+      setupComponent(args, component) {
+        component.set('externalSiteLink', args.user.get('externalSiteLink'));
+      }
+    });
+
+    if (User) {
+        User.class.reopen({
+            externalSiteLink: function() {
+                const siteUserFields = Discourse.Site.currentProp('user_fields');
+                if (!Ember.isEmpty(siteUserFields)) {
+                  const externalUserIdField = siteUserFields.filterBy('name', 'Portfolio')[0]
+                  if (!externalUserIdField) {
+                    return null;
+                  }
+                  const userFieldId = externalUserIdField.get('id');
+                  const userFields = this.get('user_fields');
+                  if (userFields && userFields[userFieldId]) {
+                    const url = userFields[userFieldId];
+                    const link = "<a href='"+url+"' target='_blank'>"+url+"</a>";
+                    return Ember.Object.create({ link, name: externalUserIdField.get('name') });
+                  } else {
+                    return null;
+                  }
+                }
+            }.property('user_fields.@each.value')
+        });
+    }
+</script>
+
+
+<script type='text/x-handlebars' data-template-name='/connectors/user-profile-primary/external-site-link'>
+  {{#if externalSiteLink}}
+    <div class="public-user-fields">
+      <div class="public-user-field">
+        <span class="user-field-name">{{externalSiteLink.name}}</span>:
+        <span class="user-field-value">{{{externalSiteLink.link}}}</span>
+      </div>
+    </div>
+  {{/if}}
+</script>
+
+<script type='text/x-handlebars' data-template-name='/connectors/user-card-metadata/external-site-link'>
+  {{#if externalSiteLink}}
+    <h3 class="user-card-public-field">
+      <span class="user-field-name">{{externalSiteLink.name}}</span>:
+      <span class="user-field-value">{{{externalSiteLink.link}}}</span>
+    </h3>
+  {{/if}}
+</script>
