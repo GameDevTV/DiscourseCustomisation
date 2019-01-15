@@ -1,7 +1,7 @@
 
 {
     "name": "GameDev.tv Customisation",
-    "about_url": "https://github.com/GameDevTV/DiscourseCustomisation/readme.md",
-    "license_url": "https://github.com/GameDevTV/DiscourseCustomisation/licence.md",
+    "about_url": "https://github.com/GameDevTV/DiscourseCustomisation/blob/master/readme.md",
+    "license_url": "https://github.com/GameDevTV/DiscourseCustomisation/blob/master/licence.md",
     "component": true
   }
