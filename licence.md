@@ -1,1 +1,1 @@
-This stuff's private
+(C) GameDev.tv

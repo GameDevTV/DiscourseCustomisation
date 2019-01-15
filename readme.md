@@ -1,3 +1,1 @@
-# GameDev.tv Custom Tags
-
-Customises Discourse tags (what we call lectures)
+# GameDev.tv Customisation Monolith
