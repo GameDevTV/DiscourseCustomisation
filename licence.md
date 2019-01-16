@@ -1,1 +1,1 @@
-Copywright GameDev.tv (an EmbraceIT Ltd brand)
+Copyright GameDev.tv (an EmbraceIT Ltd brand)
