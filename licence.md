@@ -1,1 +1,1 @@
-Copyright GameDev.tv (an EmbraceIT Ltd brand)
+Copyright EmbraceIT Ltd

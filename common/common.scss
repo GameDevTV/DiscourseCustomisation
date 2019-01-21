@@ -3,6 +3,10 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
 }
 
+// To suppress description in category drop-downs
+.category-chooser .category-desc {
+  display: none;
+}
 
 /* Below from GameDev Base on Discourse */
 .gdtv_navbar__container a:hover
