@@ -148,21 +148,3 @@ based on dark.css by Ivan Sagalaev
 .open .grippie {
   background: #24a729;
 }
-
-
-// To hide categories from homepage find ID from source code and add below
-// TODO remove
-.category-list [data-category-id="93"] 
-{
-    display: none;
-}
-
-.category-list [data-category-id="25"] 
-{
-    display: none;
-}
-
-.category-list [data-category-id="89"] 
-{
-    display: none;
-}
