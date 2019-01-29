@@ -48,6 +48,11 @@ h3.user-card-public-field {
     font-size: 1em;
 }
 
+// To reduce font size of topic titles
+.latest-topic-list-item .main-link .top-row {
+    font-size: 1em;
+}
+
 /* Box styling for topics and post list */
 .admin-contents {
     margin-left: 0;
