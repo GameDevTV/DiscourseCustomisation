@@ -43,6 +43,11 @@ h3.user-card-public-field {
  clear: both;   
 }
 
+// To reduce size of category titles
+h3 {
+    font-size: 1em;
+}
+
 /* Box styling for topics and post list */
 
 
