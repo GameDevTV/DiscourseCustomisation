@@ -43,14 +43,12 @@ h3.user-card-public-field {
  clear: both;   
 }
 
-// To reduce size of category titles in list
-.category-list {
+// To reduce size of category titles in list (on desktop at least)
+.category-list tbody .category h3 {
     font-size: 1em;
 }
 
 /* Box styling for topics and post list */
-
-
 .admin-contents {
     margin-left: 0;
     margin-right: 0;
@@ -143,7 +141,7 @@ based on dark.css by Ivan Sagalaev
 
 
 // To hide categories from homepage find ID from source code and add below
-
+// TODO remove
 .category-list [data-category-id="93"] 
 {
     display: none;
