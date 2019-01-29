@@ -1,3 +1,8 @@
+// So category and sub-category show against green header when scrolled-down
+.extra-info-wrapper .badge-wrapper.bullet span.badge-category {
+    color: #FCFCFC;
+}
+
 .docked .d-header { /* Taken from top of both light and dark theme. Purpose unknown. */
     background-color: #24a729;
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
