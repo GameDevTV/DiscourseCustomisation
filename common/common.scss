@@ -13,6 +13,11 @@
   display: none;
 }
 
+// Category description on top-level category pages too big
+.category-heading {
+    font-size: 1.3em;
+}
+
 /* Below from GameDev Base on Discourse */
 .gdtv_navbar__container a:hover
 {
