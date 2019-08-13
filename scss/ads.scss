@@ -1,4 +1,20 @@
 
+.ads-container {
+    display: block;
+    clear: both;
+}
+
+.ads-wrapper {
+    background-image: url($ads-background); 
+    background-repeat: no-repeat; 
+    background-position: left top; 
+    background-size: cover; 
+    flex-direction: row; 
+    display: flex; 
+    align-items: center; 
+    border: 4px solid #232323;
+}
+
 .text {
     font-family: Montserrat;
     color: #ffffff;
@@ -6,7 +22,7 @@
     font-weight: 900;
 }
 
-.cta-button {
+.ad-cta-button {
     height: 55px;
     background-color: #17aa1c;
     border-top-color: #000000;
@@ -18,25 +34,25 @@
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.57);
 }
 
-.cta-button p {
+.ad-cta-button p {
     font-size: 29px;
     margin: 0;
 }
 
 @media (max-width:780px) {
-    .cta-text {
+    .ad-cta-text {
         display: none;
     }
 }
 
-.cta-text {
+.ad-cta-text {
     margin-right: 81px;
     margin-left: 17px;
     font-size: 35px;
 }
 
 @media (max-width:1024px) {
-    .cta-text {
+    .ad-cta-text {
         font-size: 2.8vw;
     }
 }
@@ -53,11 +69,11 @@
 }
 
 @media (max-width:399px) {
-    .cta-button {
+    .ad-cta-button {
         width: 140px;
     }
 
-    .cta-button p {
+    .ad-cta-button p {
         font-size: 22px;
     }
 }
