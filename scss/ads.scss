@@ -1,0 +1,62 @@
+.text {
+    font-family: Montserrat;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.57);
+    font-weight: 900;
+}
+
+.cta-button {
+    height: 55px;
+    background-color: #17aa1c;
+    border-top-color: #000000;
+    border-style: none;
+    border-radius: 12px;
+    margin-right: 40px;
+    width: 217px;
+    flex-shrink: 0;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.57);
+}
+
+.cta-button p {
+    font-size: 29px;
+    margin: 0;
+}
+
+@media (max-width:780px) {
+    .cta-text {
+        display: none;
+    }
+}
+
+.cta-text {
+    margin-right: 81px;
+    margin-left: 17px;
+    font-size: 35px;
+}
+
+@media (max-width:1024px) {
+    .cta-text {
+        font-size: 2.8vw;
+    }
+}
+
+@media (max-width:399px) {
+    .ad-image {
+        max-width: 34%;
+    }
+}
+
+.ad-image {
+    width: 159px;
+    flex-shrink: 0;
+}
+
+@media (max-width:399px) {
+    .cta-button {
+        width: 140px;
+    }
+
+    .cta-button p {
+        font-size: 22px;
+    }
+}
