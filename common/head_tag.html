@@ -77,5 +77,14 @@
   {{/if}}
 </script>
 <script type="text/discourse-plugin" version="0.8">
-    console.log(Discourse.User.current())
+  var _learnq = _learnq || [];
+  if (Discourse.User.current())
+  {
+    Discourse.User.findByUsername(Discourse.User.current().username).then(function(current_user) {
+      _learnq.push(['identify', {
+        '$email': current_user.email,
+        '$first_name': current_user.name
+      }]);
+    })
+  }
 </script>
