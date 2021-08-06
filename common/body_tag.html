@@ -1,2 +1,15 @@
 <script src="https://d1dewqfmv9j5d4.cloudfront.net/gamedevtv-header.js"></script>
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VVjemm"></script>
+<script>
+  var _learnq = _learnq || [];
+  if (Discourse.User.current())
+  {
+    var current_user = await Discourse.User.findByUsername(Discourse.User.current().username)
+    _learnq.push(['identify', {
+      '$email': current_user.email,
+      '$first_name': current_user.name
+    }]);
+  }
+</script>
+
+</script>
