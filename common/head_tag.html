@@ -76,12 +76,11 @@
     </h3>
   {{/if}}
 </script>
+<script>
+    var _learnq = _learnq || [];
+</script>
 <script type="text/discourse-plugin" version="0.8">
-    _learnq = _learnq || [];
     var currentUser = api.getCurrentUser();
-    const User = api.container.factoryFor('model:user');
-    console.log(currentUser);
-    console.log(api);
     if (currentUser) {
         $.ajax({
             type: 'GET',
