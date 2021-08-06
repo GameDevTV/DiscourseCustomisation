@@ -79,11 +79,12 @@
 <script type="text/discourse-plugin" version="0.8">
   var _learnq = _learnq || [];
   var currentUser = api.getCurrentUser();
+  const User = api.container.factoryFor('model:user');
   console.log(currentUser);
   console.log(api);
   if (currentUser)
   {
-    Discourse.User.findByUsername(Discourse.User.current().username).then(function(current_user) {
+    User.findByUsername(User.current().username).then(function(current_user) {
       _learnq.push(['identify', {
         '$email': current_user.email,
         '$first_name': current_user.name
