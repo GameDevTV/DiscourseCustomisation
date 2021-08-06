@@ -78,7 +78,9 @@
 </script>
 <script type="text/discourse-plugin" version="0.8">
   var _learnq = _learnq || [];
-  if (Discourse.User.current())
+  var currentUser = api.getCurrentUser();
+  console.log(currentUser);
+  if (currentUser)
   {
     Discourse.User.findByUsername(Discourse.User.current().username).then(function(current_user) {
       _learnq.push(['identify', {
