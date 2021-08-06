@@ -86,7 +86,7 @@
         $.ajax({
             type: 'GET',
             cache: false,
-            url: `/users/${currentUser.username}/activity.json`,
+            url: `/users/${currentUser.username}.json`,
             dataType: 'json',
             xhrFields: {
                 'withCredentials': true
